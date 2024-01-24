@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["info", "warn", "error"] }],
+    "eqeqeq": ["error", "always"],
+    "no-process-exit": 0
+  },
+  "overrides": [
+    {
+      "files": "**/*.test.js",
+      "rules": {
+        "node/no-unpublished-require": 0,
+        "node/no-missing-require": 0,
+        "node/no-unpublished-import": 0
+      }
+    }
+  ],
+  "globals": {}
+}
