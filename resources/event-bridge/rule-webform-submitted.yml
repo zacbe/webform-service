@@ -1,0 +1,16 @@
+Resources:
+  MailerEventRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: Web form was submitted
+      EventBusName: ${self:custom.EVENTBUS_NAME}
+      EventPattern:
+        source:
+          - webhook.webform
+        detail-type:
+          - webhook.webform.submitted
+      Name: com.aglayainnovation.webform.submitted
+      State: ENABLED
+      Targets:
+        - Arn: !Ref SnsFormSubmittedTopic
+          Id: SNStopic

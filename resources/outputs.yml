@@ -1,0 +1,16 @@
+Outputs:
+  SnsFormSubmittedTopicName:
+    Description: SNS topic name
+    Value: !GetAtt SnsFormSubmittedTopic.TopicName
+  SnsFormSubmittedTopicArn:
+    Description: SNS topic ARN
+    Value: !Ref SnsFormSubmittedTopic
+  MySqsQueueName:
+    Description: SQS queue name
+    Value: !GetAtt MySqsQueue.QueueName
+  MySqsQueueArn:
+    Description: SQS queue ARN
+    Value: !GetAtt MySqsQueue.Arn
+  MySqsQueueURL:
+    Description: SQS queue URL
+    Value: !Ref MySqsQueue

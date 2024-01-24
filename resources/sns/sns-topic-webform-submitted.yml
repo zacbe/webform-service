@@ -1,0 +1,11 @@
+Resources:
+  SnsFormSubmittedTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: webform-submitted
+      Subscription:
+        - Protocol: sqs
+          Endpoint: !GetAtt MySqsQueue.Arn
+      Tags:
+        - Key: ${self:custom.APP_TAG.Key}
+          Value: ${self:custom.APP_TAG.Value}

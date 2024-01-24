@@ -1,0 +1,13 @@
+Resources:
+  EventBridgeToSnsPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      PolicyDocument:
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: events.amazonaws.com
+            Action: sns:Publish
+            Resource: !Ref SnsFormSubmittedTopic
+      Topics:
+        - !Ref SnsFormSubmittedTopic

@@ -1,0 +1,10 @@
+Resources:
+  MailerEventBus:
+    Type: AWS::Events::EventBus
+    Properties:
+      Name: ${self:custom.EVENTBUS_NAME}
+      Tags:
+        - Key: ManagedIn
+          Value: Webhook
+        - Key: ${self:custom.APP_TAG.Key}
+          Value: ${self:custom.APP_TAG.Value}

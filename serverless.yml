@@ -1,0 +1,83 @@
+service: email-service
+frameworkVersion: "3"
+useDotenv: true
+
+custom:
+  # ARN
+  EVENTBUS_ARN: arn:aws:events:${aws:region}:${aws:accountId}:event-bus/${sls:stage}-${env:EVENTBUS_NAME}
+
+  # ENV
+  EVENTBUS_NAME: ${sls:stage}-${env:EVENTBUS_NAME}
+
+  APP_TAG:
+    Key: APP
+    Value: AI-MAILER
+  NODE_ENV:
+    dev: development
+    prod: production
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  deploymentMethod: direct
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'us-west-2'}
+  memorySize: 1024
+  architecture: arm64
+  logRetentionInDays: 7
+
+  iam:
+    role:
+      statements:
+        # eventbridge
+        - Effect: Allow
+          Action:
+            - events:PutEvents
+          Resource:
+            - ${self:custom.EVENTBUS_ARN}
+
+  environment:
+    REGION: ${aws:region}
+    NODE_ENV: ${self:custom.NODE_ENV.${sls:stage}, 'development'}
+    EVENT_BUS_ARN: ${self:custom.EVENTBUS_ARN}
+
+resources:
+  - ${file(resources/event-bridge/event-bus.yml)}
+  - ${file(resources/event-bridge/rule-webform-submitted.yml)}
+  - ${file(resources/sns/sns-policy-webform-submitted.yml)}
+  - ${file(resources/sns/sns-topic-webform-submitted.yml)}
+  - ${file(resources/sqs/sqs-ingress-queue.yml)}
+  - ${file(resources/sqs/sqs-policy.yml)}
+  - ${file(resources/outputs.yml)}
+
+package:
+  patterns:
+    - "!docs/**"
+    - "!tests/**"
+    - "!.serverless/**"
+    - "!.editorconfig"
+    - "!.eslintrc.cjs"
+    - "!.prettierrc.cjs"
+    - "!.nvmrc"
+    - "!.gitignore"
+    - "!.github"
+    - "!.git"
+  individually: false
+  excludeDevDependencies: true
+
+functions:
+  webhook:
+    handler: src/services/webhook/index.webhook
+    memorySize: ${self:provider.memorySize}
+    description: Ingest events
+    events:
+      - http:
+          method: post
+          path: /
+          # private: true
+          # request:
+          #   schemas:
+          #     application/json:
+          #       schema: ${file(schemas/wh-event.json)}
+          #       name: CreateEvent
+          #       description: Validation model for Create Event
