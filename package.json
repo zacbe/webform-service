@@ -1,0 +1,36 @@
+{
+  "name": "email-notifications",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AglayaInnovation/email-notifications.git"
+  },
+  "author": "@zacbe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AglayaInnovation/email-notifications/issues"
+  },
+  "homepage": "https://github.com/AglayaInnovation/email-notifications#readme",
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-security": "^2.1.0",
+    "prettier": "^3.2.4",
+    "serverless-domain-manager": "^7.3.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-eventbridge": "^3.496.0",
+    "@sendgrid/mail": "^8.1.0",
+    "body-parser": "^1.20.2",
+    "lodash": "^4.17.21"
+  }
+}
