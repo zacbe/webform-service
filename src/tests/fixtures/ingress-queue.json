@@ -1,0 +1,43 @@
+{
+  "Records": [
+    {
+      "messageId": "8782e45a-c909-45bf-8d14-dcee0be427ff",
+      "receiptHandle": "AQEBscRWALE7deTFPWDT5O8ivYAhj3wsfP9HJeWOGCIrJRe3JRNIJYnhoo61EqcNuIET9i+WHKCXDTQdOfgoO191hWgSXPjeOxLBfue6HJGp0UA79ibRzG5aE+j30zryoEQWjA7WjD70UGOxXVmzhS4n1aZeufzR8CKzA/oUuPMtXWGpomX/JEZCQ1AfNwPpGgSN2OzSfVhSuQ+lfnr4ZdWcrfksO/8owOBfpZ+kmnWFVRCeYlEdBtQ4Z14DhPV5wyz1mHOeBTdjlaoyNyyLj9Pp9OiHaIkIxIzFji3+AZL61YGbdrDSUYP3+FVlrwXTum5RzxpaTVdb5ZWJ3jTjKQjveB8M7BBqJku9OK1gJJJWYexaDkwICJiDqQFXAq0pjfHtUntKOHD5g4Ytqq9jRpnWHD0fPS5YQScglahDzyRb0cw=",
+      "body": {
+        "version": "0",
+        "id": "040bc18f-3352-62bd-d674-969fd61241c3",
+        "detail-type": "webhook.webform.submitted",
+        "source": "webhook.webform",
+        "account": "054244755148",
+        "time": "2024-04-28T15:29:34Z",
+        "region": "us-west-2",
+        "resources": [],
+        "detail": {
+          "target": "test@zacbe.dev",
+          "origin": "webform@aglayainnovation.com",
+          "form": {
+            "_token": "UrJwbgEBSBPi94XcZaCTiT0e7WGlMZy2P96SpVKv",
+            "name": "Zacbe",
+            "email": "gzacbe+dorm@gmail.com",
+            "subject": "ssssss",
+            "message": "sssssssssss",
+            "g-recaptcha-response": "03AFcWeA4pkIIt95oFToDdZZeQQB0MRBPDJ3lUT0s5HCfb6HHEzh4QGGkQzLexb7HYjirMgEHHnF9dXQ6QH3QTqw9HG5xd_x-zXVeIr1y4s1mUqPphX8vxZrx8lDMqKULD2ynINDSEOWrG_Ee1fcT722W4VFPj8RWP3iK5tqchPxDDYFdJ_9RPdNQfh2pEeuFc5jQayK3LurUqS__DkBBN7UVXCKG_mAqNPOYlghA8G0Q-O7wmCtVHkA-J9YDVTh0RZQNxNM4X0G0ztwQVCujQLz2yQmERDDtGR844QVXNVMkYGEh4dzA3OgPOfRLf15X13es371iv6T-vNB7tSNsez9khRRjiJTqKRLPNZNpU-i-j25w3BUUJAhNP9A8DokkM4KkMwsYwV_MAo7JgCMdl7CWPv3YpGS9B1eEBbkl6dS5lhKQaIAgD-ZYbTXOv1prxr9TBe77Tx1iun5-TmGezFdDEo4TyTHHScU3j56UOxgtOD5sa6DACFaMFSBBt8C6bp4NdoDiDREblulPocAtXzTUQGRHVskPF9HDqozXyZitTKRjN_5Qyg9hHWML5VjbZiX9Bx_rLF3XLCNHrOg_cQYdwf_aDircQ42W1p_uFpJ5gQo6PHuAYyQVJKwBFrbl3xDweBUIP1aUZ",
+            "url": ""
+          }
+        }
+      },
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "AWSTraceHeader": "Root=1-662e6b5d-5e6c41ee34f4a1b810f056ff;Parent=253387032647fd8d;Sampled=0;Lineage=137feeb2:0",
+        "SentTimestamp": "1714318174551",
+        "SenderId": "AIDAIYLAVTDLUXBIEIX46",
+        "ApproximateFirstReceiveTimestamp": "1714318174555"
+      },
+      "messageAttributes": {},
+      "md5OfBody": "82ff28a9d97691926545d0613f778422",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-west-2:054244755148:email-service-dev-ingress-queue",
+      "awsRegion": "us-west-2"
+    }
+  ]
+}
