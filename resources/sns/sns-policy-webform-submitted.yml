@@ -11,3 +11,4 @@ Resources:
             Resource: !Ref SnsFormSubmittedTopic
       Topics:
         - !Ref SnsFormSubmittedTopic
+# Allows for Eventbridge events to be forwarded to the SNS Topic

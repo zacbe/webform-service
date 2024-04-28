@@ -5,12 +5,9 @@ Outputs:
   SnsFormSubmittedTopicArn:
     Description: SNS topic ARN
     Value: !Ref SnsFormSubmittedTopic
-  MySqsQueueName:
-    Description: SQS queue name
-    Value: !GetAtt MySqsQueue.QueueName
-  MySqsQueueArn:
-    Description: SQS queue ARN
-    Value: !GetAtt MySqsQueue.Arn
-  MySqsQueueURL:
-    Description: SQS queue URL
-    Value: !Ref MySqsQueue
+  # SqsIngressQueueName:
+  #   Description: SQS Ingress Queue name
+  #   Value: ${self:custom.INGRESS_SQS_NAME}
+  # SqsIngressQueueArn:
+  #   Description: SQS Ingress Queue ARN
+  #   Value: ${self:custom.INGRESS_SQS_ARN}

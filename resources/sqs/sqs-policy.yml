@@ -9,10 +9,10 @@ Resources:
             Effect: Allow
             Principal:
               Service: "sns.amazonaws.com"
-            Resource: !GetAtt MySqsQueue.Arn
+            Resource: ${self:custom.INGRESS_SQS_ARN}
             Action: SQS:SendMessage
             Condition:
               ArnEquals:
                 aws:SourceArn: !Ref SnsFormSubmittedTopic
       Queues:
-        - Ref: MySqsQueue
+        - ${self:custom.INGRESS_SQS_URL}

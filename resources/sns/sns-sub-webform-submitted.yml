@@ -2,7 +2,7 @@ Resources:
   SnsSubToIngressQeue:
     Type: AWS::SNS::Subscription
     Properties:
-      Endpoint: ${self:custom.DLQ_EVENT_ERROR_ARN}
+      Endpoint: ${self:custom.INGRESS_SQS_ARN}
       Protocol: sqs
       RawMessageDelivery: true
       TopicArn: !Ref SnsFormSubmittedTopic
