@@ -38,7 +38,7 @@ async function baseHandler(event) {
 
     await eb.send(webhookEvent);
 
-    return composeRes(204);
+    return composeRes(201, { message: "No Content" });
   } catch (e) {
     throw createHttpError(400, e);
   }
