@@ -8,6 +8,15 @@
  * @throws {TypeError} Throws a TypeError if the code parameter is not a number.
  */
 export function composeRes(code, body = null) {
+  if (code === 204) {
+    return {
+      statusCode: code,
+      headers: {
+        // Ensure no content type is sent for 204 responses
+      },
+    };
+  }
+
   let responseBody = body;
 
   if (body instanceof Error) {
