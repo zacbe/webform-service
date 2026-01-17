@@ -25,8 +25,8 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-security": "^2.1.0",
     "prettier": "^3.2.4",
-    "serverless-domain-manager": "^7.3.3",
-    "serverless-lift": "^1.28.1"
+    "serverless-domain-manager": "^7.4.0",
+    "serverless-lift": "^1.32.1"
   },
   "dependencies": {
     "@aws-sdk/client-eventbridge": "^3.496.0",
